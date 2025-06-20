@@ -1,0 +1,7 @@
+memory-profiler
+torch
+numpy
+cupy-cuda11x
+matplotlib
+pandas
+pytest
