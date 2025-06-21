@@ -84,27 +84,33 @@ python inferGenome.py --sham example.sham --out output_bayes_gpu.tsv --p01 0.01 
 python generate_large_sham.py --num-reads 10000 --max-pos 1000 --max-len 50 --p1 0.5 --out large.sham
 
 ```
+### 4.Run Bayesian Inference on Large Dataset (GPU)
+
+```bash
+python inferGenome.py --sham large_example.sham --out output_bayes_large.tsv --p01 0.01 --p10 0.01 --prior1 0.5
+
+```
 
 
-### 4. Run Bayesian Inference on Large Dataset (GPU)
+### 5. Run Bayesian Inference on Large Dataset (GPU)
 
 ```bash
 python inferGenome.py --sham large_example.sham --out output_bayes_large_gpu.tsv --p01 0.01 --p10 0.01 --prior1 0.5 --use-gpu
 ```
 
-### 5. Run Neural Network Inference
+### 6. Run Neural Network Inference
 
 ```bash
 python inferGenome.py --sham example.sham --out output_nn.tsv --use-nn --model mymodel.pth
 ```
 
-### 6. Run Neural Network Inference on Large Dataset
+### 7. Run Neural Network Inference on Large Dataset
 
 ```bash
 python inferGenome.py --sham large_example.sham --out output_nn_large.tsv --use-nn --model mymodel_large.pth
 ```
 
-### 7. Compare CPU vs GPU Results
+### 8. Compare CPU vs GPU Results
 
 ```bash
 python compare_outputs.py --cpu output_bayes.tsv --gpu output_bayes_gpu.tsv
