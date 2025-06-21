@@ -78,25 +78,33 @@ python inferGenome.py --sham example.sham --out output_bayes.tsv --p01 0.01 --p1
 python inferGenome.py --sham example.sham --out output_bayes_gpu.tsv --p01 0.01 --p10 0.01 --prior1 0.5 --use-gpu
 ```
 
-### 3. Run Bayesian Inference on Large Dataset (GPU)
+### 3. Generate Random large.sham files
+
+```bash
+python generate_large_sham.py --num-reads 10000 --max-pos 1000 --max-len 50 --p1 0.5 --out large.sham
+
+```
+
+
+### 4. Run Bayesian Inference on Large Dataset (GPU)
 
 ```bash
 python inferGenome.py --sham large_example.sham --out output_bayes_large_gpu.tsv --p01 0.01 --p10 0.01 --prior1 0.5 --use-gpu
 ```
 
-### 4. Run Neural Network Inference
+### 5. Run Neural Network Inference
 
 ```bash
 python inferGenome.py --sham example.sham --out output_nn.tsv --use-nn --model mymodel.pth
 ```
 
-### 5. Run Neural Network Inference on Large Dataset
+### 6. Run Neural Network Inference on Large Dataset
 
 ```bash
 python inferGenome.py --sham large_example.sham --out output_nn_large.tsv --use-nn --model mymodel_large.pth
 ```
 
-### 6. Compare CPU vs GPU Results
+### 7. Compare CPU vs GPU Results
 
 ```bash
 python compare_outputs.py --cpu output_bayes.tsv --gpu output_bayes_gpu.tsv
@@ -188,7 +196,9 @@ PyTorch has its own GPU detection mechanism and will show:
 ```
 [INFO] Using Neural Network inference on CUDA
 ```
-if a GPU is available, or:
+if a GPU is available, 
+
+or:
 ```
 [INFO] Using Neural Network inference on CPU
 ```
